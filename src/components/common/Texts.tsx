@@ -11,12 +11,14 @@ interface ITextProps extends TextProps {
   italic?: boolean;
   center?: boolean;
   left?: boolean;
+  isOleo?: boolean;
   right?: boolean;
 }
 
 export const TextNormal: React.FC<ITextProps> = props => {
   const {
     children,
+    isOleo,
     color,
     underline,
     textStyle,
@@ -38,6 +40,7 @@ export const TextNormal: React.FC<ITextProps> = props => {
         center && styles.center,
         right && styles.right,
         left && styles.left,
+        isOleo && styles.oleoFont,
         bold && styles.bold,
       ]}
       {...props}>
@@ -49,6 +52,7 @@ export const TextNormal: React.FC<ITextProps> = props => {
 export const TextSmall: React.FC<ITextProps> = props => {
   const {
     children,
+    isOleo,
     color,
     underline,
     textStyle,
@@ -71,6 +75,7 @@ export const TextSmall: React.FC<ITextProps> = props => {
         center && styles.center,
         right && styles.right,
         left && styles.left,
+        isOleo && styles.oleoFont
       ]}
       {...props}>
       {children}
@@ -81,6 +86,7 @@ export const TextSmall: React.FC<ITextProps> = props => {
 export const TextSmaller: React.FC<ITextProps> = props => {
   const {
     children,
+    isOleo,
     color,
     underline,
     textStyle,
@@ -103,6 +109,7 @@ export const TextSmaller: React.FC<ITextProps> = props => {
         center && styles.center,
         right && styles.right,
         left && styles.left,
+        isOleo && styles.oleoFont
       ]}
       {...props}>
       {children}
@@ -113,6 +120,7 @@ export const TextSmaller: React.FC<ITextProps> = props => {
 export const TextBig: React.FC<ITextProps> = props => {
   const {
     children,
+    isOleo,
     color,
     underline,
     textStyle,
@@ -135,6 +143,7 @@ export const TextBig: React.FC<ITextProps> = props => {
         center && styles.center,
         right && styles.right,
         left && styles.left,
+        isOleo && styles.oleoFont
       ]}
       {...props}>
       {children}
@@ -145,6 +154,7 @@ export const TextBig: React.FC<ITextProps> = props => {
 export const TextBigger: React.FC<ITextProps> = props => {
   const {
     children,
+    isOleo,
     color,
     underline,
     textStyle,
@@ -167,6 +177,7 @@ export const TextBigger: React.FC<ITextProps> = props => {
         center && styles.center,
         right && styles.right,
         left && styles.left,
+        isOleo && styles.oleoFont
       ]}
       {...props}>
       {children}
@@ -209,4 +220,5 @@ const styles = StyleSheet.create({
   right: {
     textAlign: 'right',
   },
+  oleoFont: { fontFamily: "OleoScript-Bol.ttf" }
 });

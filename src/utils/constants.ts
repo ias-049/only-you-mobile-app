@@ -1,3 +1,5 @@
+import { IMAGES } from "./images";
+import { COLORS } from "./theme";
 
 export const BASE_URL = '';
 export const API_VERSION = 'v1';
@@ -12,6 +14,46 @@ export type Country = {
     code: string;
     dial_code: string
 }
+
+export type HomeTag = {
+    id: string;
+    name: string
+}
+
+export type HomeCarouselType = {
+    id: string;
+    img: any;
+    isFav: boolean
+}
+
+export const neonBlueShadow = {
+    shadowColor: "#2996D7",
+    borderColor: "#2996D7",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.7,
+    shadowRadius: 10,
+    borderWidth: 2,
+    elevation: 5, // For Android shadow
+}
+export const neonPinkShadow = {
+    shadowColor: COLORS.secondary, // Neon shadow color
+    borderWidth: 2,
+    borderColor: COLORS.secondary, // Neon border color
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.7,
+    shadowRadius: 10,
+    elevation: 5, // For Android shadow
+}
+
+export const HOMETAGS: HomeTag[] = [
+    { id: "0", name: "dash" },
+    { id: "1", name: "Man" },
+    { id: "2", name: "Shoes" },
+    { id: "3", name: "Woman" },
+    { id: "4", name: "Forest" },
+    { id: "5", name: "Smart Phone" },
+]
+
 export const COUNTRIES: Country[] = [
     {
         "name": "Afghanistan",
@@ -631,3 +673,10 @@ export const COUNTRIES: Country[] = [
         "value": "+872"
     }
 ];
+
+export const CAROUSEL_DATA: HomeCarouselType[] = [
+    { id: '1', img: IMAGES.carousel, isFav: true },
+    { id: '1', img: IMAGES.carousel, isFav: true },
+    { id: '1', img: IMAGES.carousel, isFav: true },
+    { id: '1', img: IMAGES.carousel, isFav: true },
+]

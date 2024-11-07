@@ -17,6 +17,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		0D2C16315E9149F88E07621E /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 992087872ECD453893DD8FE5 /* Rubik-Italic.ttf */; };
 		7BF93B9FE0AA4B2392AD0B67 /* Rubik.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA65770906548FFAE1C14F3 /* Rubik.ttf */; };
+		2EA342ABA3874C5F9F70E450 /* OleoScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48ACFF7C896D40418B46202B /* OleoScript-Bold.ttf */; };
+		CFD1D674B8B14B8DBF0826A1 /* OleoScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12673DD23A914C47BFAAC0B1 /* OleoScript-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		992087872ECD453893DD8FE5 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; name = "Rubik-Italic.ttf"; path = "../assets/fonts/Rubik-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		EDA65770906548FFAE1C14F3 /* Rubik.ttf */ = {isa = PBXFileReference; name = "Rubik.ttf"; path = "../assets/fonts/Rubik.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		48ACFF7C896D40418B46202B /* OleoScript-Bold.ttf */ = {isa = PBXFileReference; name = "OleoScript-Bold.ttf"; path = "../assets/fonts/OleoScript-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		12673DD23A914C47BFAAC0B1 /* OleoScript-Regular.ttf */ = {isa = PBXFileReference; name = "OleoScript-Regular.ttf"; path = "../assets/fonts/OleoScript-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 			children = (
 				992087872ECD453893DD8FE5 /* Rubik-Italic.ttf */,
 				EDA65770906548FFAE1C14F3 /* Rubik.ttf */,
+				48ACFF7C896D40418B46202B /* OleoScript-Bold.ttf */,
+				12673DD23A914C47BFAAC0B1 /* OleoScript-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -264,6 +270,8 @@
 				116B702B88E6DDEB1EE10299 /* PrivacyInfo.xcprivacy in Resources */,
 				0D2C16315E9149F88E07621E /* Rubik-Italic.ttf in Resources */,
 				7BF93B9FE0AA4B2392AD0B67 /* Rubik.ttf in Resources */,
+				2EA342ABA3874C5F9F70E450 /* OleoScript-Bold.ttf in Resources */,
+				CFD1D674B8B14B8DBF0826A1 /* OleoScript-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

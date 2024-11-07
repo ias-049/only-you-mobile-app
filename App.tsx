@@ -15,7 +15,7 @@ const App: React.FC = () => {
   LogBox.ignoreAllLogs();
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <StatusBar backgroundColor={COLORS.white} barStyle={'light-content'} />
+      <StatusBar backgroundColor={COLORS.background} barStyle={'light-content'} />
       <ToastProvider placement="top" duration={4000} style={{ top: 30 }}>
         <ReqsProvider>
           <PersistGate persistor={persistor}>

@@ -9,9 +9,15 @@ export type AuthStackParamList = {
   VerifyOTP: undefined;
 };
 
-export type TabStackParamList = {};
+export type TabStackParamList = {
+  Home: undefined
+  AddContent: undefined
+  Profile: undefined
+};
 
-export type DashStackParamList = {};
+export type DashStackParamList = {
+  Tab: undefined
+};
 
 export type DashStackProps<Screen extends keyof DashStackParamList> =
   StackScreenProps<DashStackParamList, Screen>;
@@ -24,7 +30,7 @@ export type TabStackProps<Screen extends keyof TabStackParamList> =
 
 export interface TabList {
   id: number;
-  label: '';
+  label: "Home" | "AddContent" | "Profile";
   icon: any;
   component: React.FC<any>;
 }

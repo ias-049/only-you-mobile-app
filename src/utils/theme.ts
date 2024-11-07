@@ -2,7 +2,9 @@ import { ms } from "react-native-size-matters";
 
 export const COLORS = {
   primary: '#004E80',
+  blue: '#2996D7',
   primaryLight: '#A9BABC',
+  navyBlue: "#122C58",
   secondary: '#FF3181',
   black: '#000000',
   background: "#0B092E",

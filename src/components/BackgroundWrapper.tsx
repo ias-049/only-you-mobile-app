@@ -8,7 +8,7 @@ const BackgroundWrapper: React.FC<{ children: React.ReactNode }> = ({ children }
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor={COLORS.background} barStyle={'light-content'} />
-            <SafeAreaView style={styles.container}>
+            <SafeAreaView style={styles.container} edges={['top']}>
                 {children}
             </SafeAreaView>
         </View>
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.background,
         paddingHorizontal: scale(6),
         paddingTop: Platform.select({
-            android: vs(5)
+            android: vs(15)
         })
     },
 })
