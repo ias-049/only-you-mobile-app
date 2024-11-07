@@ -1,6 +1,8 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { HomeScreen } from '../../screens/Home';
+import { SearchScreen } from '../../screens/Search';
+import { FavouritesScreen } from '../../screens/Favourites';
 
 interface HomeStackProps { }
 
@@ -13,7 +15,9 @@ export const HomeStack: React.FC<HomeStackProps> = props => {
       screenOptions={{
         headerShown: false,
       }}>
+      <Stack.Screen name="FavouritesScreen" component={FavouritesScreen} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="SearchScreen" component={SearchScreen} />
     </Stack.Navigator>
   );
 };

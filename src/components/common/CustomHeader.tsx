@@ -9,35 +9,35 @@ import { TextNormal } from './Texts'
 interface CustomHeaderProps {
     title: string
     onPressBack?: () => void
+    renderRight?: () => React.ReactNode
     cgb?: boolean
 }
 
 const CustomHeader: React.FC<CustomHeaderProps> = (props) => {
 
-    const { title, onPressBack, cgb } = props
+    const { title, onPressBack, cgb, renderRight } = props
 
     const isLeftDisabled = typeof onPressBack !== "function"
 
     return (
         <View style={styles.container}>
             <View style={styles.left}>
-                {cgb && <TouchableOpacity onPress={onPressBack} disabled={isLeftDisabled}>
-                    <LinearGradient colors={["#4A3CB080", "#844AB2"]} style={styles.iconContainer}>
-                        <CustomIcon name='chevron-left' type='entypo' color='white' size={ms(18)} disabled />
-                    </LinearGradient>
+                {cgb && <TouchableOpacity onPress={onPressBack} disabled={isLeftDisabled} style={styles.iconContainer}>
+                    <CustomIcon name='arrowleft' type='antdesign' color='white' size={ms(18)} disabled />
                 </TouchableOpacity>}
             </View>
             <View style={styles.center}>
                 <TextNormal bold>{title}</TextNormal>
             </View>
             <View style={styles.right}>
-                <TouchableOpacity>
-                    <LinearGradient colors={["#4A3CB080", "#844AB2"]} style={styles.iconContainer}>
-                        <CustomIcon name='dots-three-vertical' type='entypo' color='white' size={ms(18)} disabled />
-                    </LinearGradient>
-                </TouchableOpacity>
+                {renderRight ? renderRight() :
+                    // <TouchableOpacity style={styles.iconContainer}>
+                    //     <CustomIcon name='dots-three-vertical' type='entypo' color='white' size={ms(18)} disabled />
+                    // </TouchableOpacity>
+                    <></>
+                }
             </View>
-        </View>
+        </View >
     )
 }
 
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         maxHeight: 100,
         height: vs(50),
         flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: 'flex-start',
     },
     left: {
         flex: 1,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     },
     center: {
         flex: 4,
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
         height: vs(50),
     },

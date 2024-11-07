@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { Pressable, ScrollView, StyleSheet } from 'react-native'
 import BackgroundWrapper from '../components/BackgroundWrapper'
 import { HomeHeader } from '../components/Home/HomeHeader'
 import { HomeSearch } from '../components/Home/HomeSearch'
@@ -10,22 +10,28 @@ import { vs } from 'react-native-size-matters'
 import { HomeCarousel } from '../components/Home/HomeCarousel'
 import { CAROUSEL_DATA } from '../utils/constants'
 import { Highlights } from '../components/Highlights'
+import { NavigationProp } from '@react-navigation/native'
 
-interface HomeScreenProps { }
+interface HomeScreenProps {
+    navigation: NavigationProp<any>
+}
 
 export const HomeScreen: React.FC<HomeScreenProps> = (props) => {
-    const { } = props
+    const { navigation } = props
 
     const [selectedTag, setSelectedTag] = useState<string>('0')
     const [selectedTab, setSelectedTab] = useState<'my-feed' | 'all'>('my-feed')
 
     const onSelectTag = (arg: string) => setSelectedTag(arg)
     const onSelectTab = (arg: 'my-feed' | 'all') => setSelectedTab(arg)
+    const redirectToSearch = () => navigation.navigate("SearchScreen")
 
     return (
         <BackgroundWrapper>
             <HomeHeader />
-            <HomeSearch />
+            <View style={{ marginVertical: 10 }}>
+                <HomeSearch onPressSearchBar={redirectToSearch} editable={false} search='' onSearch={() => { }} />
+            </View>
             <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
                 <HomeTags onSelect={onSelectTag} selectedTag={selectedTag} />
                 <HomeTabs onTabChange={onSelectTab} selected={selectedTab} />
