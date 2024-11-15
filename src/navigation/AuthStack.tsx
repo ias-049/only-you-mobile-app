@@ -5,6 +5,7 @@ import { RegisterScreen } from '../screens/Register';
 import { VerifyOTPScreen } from '../screens/VerifyOTP';
 import { LoginScreen } from '../screens/Login';
 import { OnboardingScreen } from '../screens/Onboarding';
+import BottomTabStack from './BottomTabStack';
 
 const Stack = createStackNavigator<AuthStackParamList>();
 
@@ -15,6 +16,7 @@ const AuthStack: React.FC = () => {
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="VerifyOTP" component={VerifyOTPScreen} />
+      <Stack.Screen name="Tab" component={BottomTabStack} />
     </Stack.Navigator>
   );
 };

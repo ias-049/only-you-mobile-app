@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ms, vs } from 'react-native-size-matters';
 import { IMAGES } from '../utils/images';
 import { TextNormal, TextSmall } from './common/Texts';
 import { COLORS } from '../utils/theme';
 import CustomIcon from './common/CustomIcon';
+import { useNavigation } from '@react-navigation/native';
 
 interface RecentSearchProps {
 
@@ -31,8 +32,12 @@ export const PeopleSearhItem: React.FC<PeopleSearhItemType> = (props) => {
 
     const { } = props
 
+    const navigation = useNavigation()
+
+    const onPress = () => navigation.navigate("FavouritesScreen")
+
     return (
-        <View style={styles.subContainer}>
+        <TouchableOpacity style={styles.subContainer} onPress={onPress}>
             <View style={styles.row}>
                 <Image style={styles.profileImg} source={IMAGES.profile} />
                 <View style={styles.textContainer}>
@@ -41,7 +46,7 @@ export const PeopleSearhItem: React.FC<PeopleSearhItemType> = (props) => {
                 </View>
             </View>
             <CustomIcon name='x' type='feather' color={COLORS.white} size={ms(20)} />
-        </View>
+        </TouchableOpacity>
     )
 }
 

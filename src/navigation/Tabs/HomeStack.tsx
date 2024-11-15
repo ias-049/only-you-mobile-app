@@ -15,9 +15,9 @@ export const HomeStack: React.FC<HomeStackProps> = props => {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="FavouritesScreen" component={FavouritesScreen} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="SearchScreen" component={SearchScreen} />
+      <Stack.Screen name="FavouritesScreen" component={FavouritesScreen} />
     </Stack.Navigator>
   );
 };

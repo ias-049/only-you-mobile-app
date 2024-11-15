@@ -45,7 +45,9 @@ export const LoginScreen: React.FC<LoginProps> = (props) => {
         },
     ]
 
-    const handleLogin = () => { }
+    const handleLogin = () => { 
+        navigation.navigate("Tab")
+    }
 
 
     return (
