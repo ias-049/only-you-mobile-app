@@ -5,4 +5,5 @@ export const IMAGES = {
     highlight1: require('../assets/images/highlight1.png'),
     highlight2: require('../assets/images/highlight2.png'),
     profile: require('../assets/images/profile.png'),
+    userProfile: require('../assets/images/userProfile.png'),
 };

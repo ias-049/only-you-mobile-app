@@ -17,6 +17,7 @@ export type TabStackParamList = {
 
 export type DashStackParamList = {
   Tab: undefined
+  UserProfile: undefined
 };
 
 export type DashStackProps<Screen extends keyof DashStackParamList> =
