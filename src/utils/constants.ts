@@ -680,3 +680,54 @@ export const CAROUSEL_DATA: HomeCarouselType[] = [
     { id: '1', img: IMAGES.carousel, isFav: true },
     { id: '1', img: IMAGES.carousel, isFav: true },
 ]
+
+export const DEMO_IMAGES = [
+    {
+        id: "1",
+        image: IMAGES.userProfile
+    },
+    {
+        id: "3",
+        image: IMAGES.profile
+    },
+    {
+        id: "2",
+        image: IMAGES.carousel
+    },
+    {
+        id: "4",
+        image: IMAGES.userProfile
+    },
+    {
+        id: "5",
+        image: IMAGES.profile
+    },
+    {
+        id: "6",
+        image: IMAGES.carousel
+    },
+    {
+        id: "7",
+        image: IMAGES.userProfile
+    },
+    {
+        id: "8",
+        image: IMAGES.profile
+    },
+    {
+        id: "9",
+        image: IMAGES.carousel
+    },
+    {
+        id: "10",
+        image: IMAGES.userProfile
+    },
+    {
+        id: "11",
+        image: IMAGES.profile
+    },
+    {
+        id: "12",
+        image: IMAGES.carousel
+    },
+]

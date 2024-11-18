@@ -12,6 +12,7 @@ import PhoneInput from './PhoneInput';
 import OTPInput from './OTPInput';
 import DateTimePicker from './DateTimePicker';
 import CustomDropDown from './CustomDropDown';
+import TextArea from './TextArea';
 
 export type Field = {
   name: string;
@@ -86,6 +87,16 @@ const Fields: React.FC<FieldsType> = props => {
               onChange={field.onChange}
               error={fieldState?.error?.message}
               {...i} />
+          );
+        }
+        if (i.type === "textarea") {
+          return (
+            <TextArea
+              value={field.value}
+              onChangeT={field.onChange}
+              error={fieldState?.error?.message}
+              {...i}
+            />
           );
         }
         return (

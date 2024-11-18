@@ -35,7 +35,7 @@ const CustomIcon: React.FC<CustomIconProps> = props => {
     onPress,
     containerStyle,
     size = scale(25),
-    color = COLORS.black,
+    color = COLORS.white,
     solid,
     name,
     type = 'ionicons',

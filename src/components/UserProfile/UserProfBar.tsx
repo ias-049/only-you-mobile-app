@@ -1,9 +1,10 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { vs } from 'react-native-size-matters'
 import { COLORS } from '../../utils/theme'
 import { IMAGES } from '../../utils/images'
 import { TextNormal, TextSmall } from '../common/Texts'
+import { NavigationProp, useNavigation } from '@react-navigation/native'
 
 interface UserProfBarProps { }
 interface InforProps {
@@ -27,18 +28,22 @@ const InfoBox: React.FC<InforProps> = (props) => {
 
 export const UserProfBar: React.FC<UserProfBarProps> = (props) => {
     const { } = props
+    const navigation: NavigationProp<any> = useNavigation()
+
+    const redirectToConnections = () => navigation.navigate("Connections")
+
     return (
         <View>
-            <View style={styles.followContainer}>
+            <TouchableOpacity style={styles.followContainer} onPress={redirectToConnections} activeOpacity={0.6}>
                 <View style={styles.imageContainer}>
                     <Image source={IMAGES.userProfile} style={styles.image} />
                 </View>
                 <InfoBox label='Posts' count={23} />
                 <InfoBox label='Following' count={23} />
                 <InfoBox label='Followers' count={23} />
-            </View>
+            </TouchableOpacity>
             <TextSmall bold color={COLORS.secondary}>@simmone</TextSmall>
-            <TextSmall numberOfLines={4}>🌟 Brooklyn Simmons 🌟 Model | Dreamer | Wanderer 📍 NYC | LA | ✈️ Everywhere</TextSmall>
+            <TextSmall numberOfLines={4}>{`🌟 Brooklyn Simmons 🌟 Model | Dreamer | Wanderer 📍 NYC | LA | ✈️ Everywhere`}</TextSmall>
         </View>
     )
 }
@@ -67,7 +72,6 @@ const styles = StyleSheet.create({
         elevation: 4
     },
     infoBox: {
-        // flexDirection: 'column',
         gap: 10,
-    }
+   }
 })

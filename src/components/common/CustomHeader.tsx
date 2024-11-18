@@ -5,6 +5,7 @@ import CustomIcon from './CustomIcon'
 import LinearGradient from "react-native-linear-gradient"
 import { THEME } from '../../utils/theme'
 import { TextNormal } from './Texts'
+import { NavigationProp, useNavigation } from '@react-navigation/native'
 
 interface CustomHeaderProps {
     title: string
@@ -16,16 +17,23 @@ interface CustomHeaderProps {
 const CustomHeader: React.FC<CustomHeaderProps> = (props) => {
 
     const { title, onPressBack, cgb, renderRight } = props
+    const navigation: NavigationProp<any> = useNavigation()
 
-    const isLeftDisabled = typeof onPressBack !== "function"
+    const onPressLeft = () => {
+        if (typeof onPressBack === "function") {
+            onPressBack()
+        } else {
+            navigation.goBack()
+        }
+    }
 
     return (
         <View style={styles.container}>
-            <View style={styles.left}>
-                {cgb && <TouchableOpacity onPress={onPressBack} disabled={isLeftDisabled} style={styles.iconContainer}>
+            {cgb && <View style={styles.left}>
+                <TouchableOpacity onPress={onPressLeft} style={styles.iconContainer}>
                     <CustomIcon name='arrowleft' type='antdesign' color='white' size={ms(18)} disabled />
-                </TouchableOpacity>}
-            </View>
+                </TouchableOpacity>
+            </View>}
             <View style={styles.center}>
                 <TextNormal bold>{title}</TextNormal>
             </View>
@@ -64,7 +72,7 @@ const styles = StyleSheet.create({
     },
     right: {
         flex: 1,
-        alignItems: 'center',
+        alignItems: 'flex-end',
         justifyContent: 'center',
 
         height: vs(50),

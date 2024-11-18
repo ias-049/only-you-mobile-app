@@ -11,7 +11,7 @@ import {
 import { scale, vs } from 'react-native-size-matters';
 import { COLORS } from '../../utils/theme';
 import CustomIcon from './CustomIcon';
-import { TextSmall, TextSmaller } from './Texts';
+import { TextNormal, TextSmall, TextSmaller } from './Texts';
 
 interface TextAreaProps extends TextInputProps {
     textInputContainerStyle?: StyleProp<ViewStyle>;
@@ -19,6 +19,7 @@ interface TextAreaProps extends TextInputProps {
     textInputStyle?: StyleProp<TextStyle>;
     labelStyle?: StyleProp<TextStyle>;
     label?: string;
+    editable?: string;
     error?: string | undefined;
     icon?: any;
     onChangeT: (txt: string) => void
@@ -29,6 +30,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     textInputStyle,
     containerStyle,
     error,
+    editable = true,
     secureTextEntry,
     onChangeT,
     value,
@@ -47,42 +49,46 @@ const TextArea: React.FC<TextAreaProps> = ({
             {label && (
                 <TextSmall bold textStyle={{ ...styles.label, ...labelStyle }}>{label}</TextSmall>
             )}
-            <>
-                <View style={[styles.container, containerStyle]}>
-                    <View style={[styles.textInputContainer, textInputContainerStyle]}>
-                        <CustomIcon {...icon} />
-                        <TextInput
-                            ref={textRef}
-                            value={value}
-                            style={[styles.textInput, textInputStyle]}
-                            onChangeText={onChangeT}
-                            placeholderTextColor={COLORS.lightgrey}
-                            secureTextEntry={isVisible}
-                            placeholder={restProps?.placeholder}
-                            multiline
-                            {...restProps}
-                        />
-                        {!!secureTextEntry && (
-                            <View
-                                style={{
-                                    position: 'absolute',
-                                    right: 0,
-                                }}>
-                                <CustomIcon
-                                    name={!isVisible ? 'eye-slash' : 'eye'}
-                                    type="font-awesome-6"
-                                    onPress={() => setIsVisible(p => !p)}
-                                    size={scale(18)}
-                                    color='white'
-                                />
-                            </View>
-                        )}
+            {editable ? (
+                <>
+                    <View style={[styles.container, containerStyle]}>
+                        <View style={[styles.textInputContainer, textInputContainerStyle]}>
+                            <CustomIcon {...icon} />
+                            <TextInput
+                                ref={textRef}
+                                value={value}
+                                style={[styles.textInput, textInputStyle]}
+                                onChangeText={onChangeT}
+                                placeholderTextColor={COLORS.lightgrey}
+                                secureTextEntry={isVisible}
+                                placeholder={restProps?.placeholder}
+                                multiline
+                                {...restProps}
+                            />
+                            {!!secureTextEntry && (
+                                <View
+                                    style={{
+                                        position: 'absolute',
+                                        right: 0,
+                                    }}>
+                                    <CustomIcon
+                                        name={!isVisible ? 'eye-slash' : 'eye'}
+                                        type="font-awesome-6"
+                                        onPress={() => setIsVisible(p => !p)}
+                                        size={scale(18)}
+                                        color='white'
+                                    />
+                                </View>
+                            )}
+                        </View>
                     </View>
-                </View>
-                {error && <TextSmaller bold color={'red'}>
-                    {`* ${error}`}
-                </TextSmaller>}
-            </>
+                    {error && <TextSmaller bold color={'red'}>
+                        {`* ${error}`}
+                    </TextSmaller>}
+                </>
+            ) : (
+                <TextNormal>{value}</TextNormal>
+            )}
         </View>
     );
 };
@@ -94,7 +100,7 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: '#232243',
         borderRadius: 20,
-        height: scale(170),
+        height: scale(150),
         textAlignVertical: 'top',
         paddingHorizontal: scale(2),
         overflow: 'hidden',
