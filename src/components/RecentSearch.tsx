@@ -5,7 +5,7 @@ import { IMAGES } from '../utils/images';
 import { TextNormal, TextSmall } from './common/Texts';
 import { COLORS } from '../utils/theme';
 import CustomIcon from './common/CustomIcon';
-import { useNavigation } from '@react-navigation/native';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 
 interface RecentSearchProps {
 
@@ -32,9 +32,9 @@ export const PeopleSearhItem: React.FC<PeopleSearhItemType> = (props) => {
 
     const { } = props
 
-    const navigation = useNavigation()
+    const navigation: NavigationProp<any> = useNavigation()
 
-    const onPress = () => navigation.navigate("FavouritesScreen")
+    const onPress = () => navigation.navigate("UserProfile")
 
     return (
         <TouchableOpacity style={styles.subContainer} onPress={onPress}>
