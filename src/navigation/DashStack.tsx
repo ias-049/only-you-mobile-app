@@ -4,6 +4,8 @@ import { DashStackParamList } from './interface';
 import BottomTabStack from './BottomTabStack';
 import { UserProfileScreen } from '../screens/UserProfile';
 import { ConnectionsScreen } from '../screens/Connections';
+import { SubscriptionsScreen } from '../screens/Subscriptions';
+import { PaymentScreen } from '../screens/Payment';
 
 interface DashProps { }
 
@@ -15,6 +17,8 @@ const DashStack: React.FC<DashProps> = () => {
       <Stack.Screen name="Tab" component={BottomTabStack} />
       <Stack.Screen name="UserProfile" component={UserProfileScreen} />
       <Stack.Screen name="Connections" component={ConnectionsScreen} />
+      <Stack.Screen name="SubscriptionScreen" component={SubscriptionsScreen} />
+      <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
     </Stack.Navigator>
   );
 };

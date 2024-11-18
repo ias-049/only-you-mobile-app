@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { ProfileScreen } from '../../screens/Profile';
 import { MenuScreen } from '../../screens/Menu';
+import { ProfileScreen } from '../../screens/Profile';
 import { ProfileDetailScreen } from '../../screens/ProfileDetail';
 
 interface ProfileStackProps { }
