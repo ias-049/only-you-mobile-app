@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';;
 import React from 'react';
 import { DashStackParamList } from './interface';
 import BottomTabStack from './BottomTabStack';
@@ -9,7 +9,7 @@ import { PaymentScreen } from '../screens/Payment';
 
 interface DashProps { }
 
-const Stack = createStackNavigator<DashStackParamList>();
+const Stack = createNativeStackNavigator<DashStackParamList>();
 
 const DashStack: React.FC<DashProps> = () => {
   return (

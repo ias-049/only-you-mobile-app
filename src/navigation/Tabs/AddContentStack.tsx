@@ -1,10 +1,10 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';;
 import React from 'react';
 import { AddContentScreen } from '../../screens/AddContent';
 
 interface OrderStackProps { }
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const AddContentStack: React.FC<OrderStackProps> = props => {
   const { } = props;

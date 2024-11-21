@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';;
 import React from 'react';
 import { MenuScreen } from '../../screens/Menu';
 import { ProfileScreen } from '../../screens/Profile';
@@ -6,7 +6,7 @@ import { ProfileDetailScreen } from '../../screens/ProfileDetail';
 
 interface ProfileStackProps { }
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const ProfileStack: React.FC<ProfileStackProps> = props => {
   const { } = props;

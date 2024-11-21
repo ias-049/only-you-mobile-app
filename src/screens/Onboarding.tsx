@@ -1,13 +1,12 @@
-import { Image, Platform, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
 import { NavigationProp } from '@react-navigation/native'
-import BackgroundWrapper from '../components/BackgroundWrapper'
-import { SvgUri } from 'react-native-svg'
-import { IMAGES } from '../utils/images'
+import React from 'react'
+import { Image, Platform, StyleSheet, View } from 'react-native'
 import { ms, scale, vs } from 'react-native-size-matters'
-import { TextBig, TextBigger, TextNormal, TextSmaller } from '../components/common/Texts'
-import { COLORS } from '../utils/theme'
+import BackgroundWrapper from '../components/BackgroundWrapper'
 import CustomButton from '../components/common/CustomButton'
+import { TextBigger, TextNormal, TextSmaller } from '../components/common/Texts'
+import { IMAGES } from '../utils/images'
+import { COLORS } from '../utils/theme'
 
 interface OnboardingProps {
     navigation: NavigationProp<any>
@@ -63,9 +62,10 @@ const styles = StyleSheet.create({
         width: scale(90)
     },
     btnContainer: {
-        flex: 1,
+        // flex: 1,
         justifyContent: 'flex-end',
-        rowGap: 16,
-        paddingBottom: vs(10)
+        rowGap: 13,
+        paddingBottom: vs(5),
+        marginTop: 5
     }
 })

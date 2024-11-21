@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
     },
     left: {
-        flex: 1,
-        alignItems: 'center',
+        // flex: 1,
+        alignItems: 'flex-start',
         justifyContent: 'center',
         height: vs(50),
     },

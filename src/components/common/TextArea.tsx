@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
     textInput: {
         fontSize: scale(16),
         paddingHorizontal: 10,
+        textAlignVertical: "top",
         flex: 1,
         height: '90%',
         color: COLORS.white,

@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';;
 import React from 'react';
 import { HomeScreen } from '../../screens/Home';
 import { SearchScreen } from '../../screens/Search';
@@ -7,7 +7,7 @@ import { NotificationScreen } from '../../screens/Notifications';
 
 interface HomeStackProps { }
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export const HomeStack: React.FC<HomeStackProps> = props => {
   const { } = props;

@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         rowGap: 16,
-        paddingBottom: vs(10)
+        paddingBottom: vs(15)
     },
     formContainer: {
         flex: 1,
