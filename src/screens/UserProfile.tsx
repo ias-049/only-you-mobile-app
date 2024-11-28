@@ -19,14 +19,15 @@ interface UserProfileScreenProps {
 export const UserProfileScreen: React.FC<UserProfileScreenProps> = (props) => {
     const { navigation } = props
     const onBack = () => navigation.goBack()
+    const redirectToInbox = () => navigation.navigate("Inbox")
     return (
         <BackgroundWrapper>
-            <CustomHeader title='Brooklyn Simmons' cgb onPressBack={onBack}/>
+            <CustomHeader title='Brooklyn Simmons' cgb onPressBack={onBack} />
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: vs(20) }}>
                 <UserProfBar />
                 <View style={styles.actionContainer}>
                     <View style={styles.btnCover}>
-                        <TouchableOpacity style={styles.button}>
+                        <TouchableOpacity style={styles.button} onPress={redirectToInbox}>
                             <CustomIcon name='comment-dots' type='font-awesome-5' color={COLORS.white} disabled size={ms(19)} />
                             <TextNormal>Message</TextNormal>
                         </TouchableOpacity>

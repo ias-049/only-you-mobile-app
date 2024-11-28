@@ -1,4 +1,5 @@
-import { StackScreenProps } from '@react-navigation/stack';
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+
 
 export type AuthStackParamList = {
   Login: undefined;
@@ -17,6 +18,8 @@ export type TabStackParamList = {
 
 export type DashStackParamList = {
   Tab: undefined
+  Chats: undefined
+  Inbox: undefined
   UserProfile: undefined
   Connections: undefined
   SubscriptionScreen: undefined
@@ -24,13 +27,13 @@ export type DashStackParamList = {
 };
 
 export type DashStackProps<Screen extends keyof DashStackParamList> =
-  StackScreenProps<DashStackParamList, Screen>;
+  NativeStackScreenProps<DashStackParamList, Screen>;
 
 export type AuthStackProps<Screen extends keyof AuthStackParamList> =
-  StackScreenProps<AuthStackParamList, Screen>;
+  NativeStackScreenProps<AuthStackParamList, Screen>;
 
 export type TabStackProps<Screen extends keyof TabStackParamList> =
-  StackScreenProps<TabStackParamList, Screen>;
+  NativeStackScreenProps<TabStackParamList, Screen>;
 
 export interface TabList {
   id: number;
